@@ -1,13 +1,34 @@
 //This is the class that will manage all your APIs
 
 class APIManager {
+    constructor(URI){
+        this._URIs = URI
+    }
 
-    
     GetData(URI) {
         return $.get(URI)
     }
 
-   
+    GetDataPromise = function(URI) {
+        return new Promise((resolve, reject) =>
+            $.get(URI)
+            .then(response => {
+                if (response.ok) {
+                    return response
+                }
+                throw new Error('somethings wrong')
+            })
+            .then(data => resolve(data))
+            )
+            .catch(error => reject(error));
+    }
+
+    
+
+    async loadData(URI) {
+        let result = await axios.get(URI)
+    }
+
     async loadAllData() {
             // read our JSON
             let promises = []
@@ -16,11 +37,11 @@ class APIManager {
             })
             // let res = await axios.get(URI);
             // console.log(await Promise.all(promises))
-            this._results = await Promise.all(promises)
-            console.log("loadData")
+            return await Promise.all(promises)
 
-            // func(this._results)
+
     }
+
 
     get results(){
         return this._results;

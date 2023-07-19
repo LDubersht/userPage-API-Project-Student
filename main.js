@@ -1,9 +1,14 @@
 
 
-
 const fbdata = new PageDataFS()
 
-fbdata.loadData()
+const render = new Renderer()
+
+fbdata.loadData().then(response =>{
+    render.RenderPage(fbdata)
+
+})
+// fbdata.CreateObjects()
 
 
 

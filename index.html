@@ -13,11 +13,27 @@
 
 <body>
     <script id="user-container-template" type="text/x-handlebars-template">
+        <img id = "profile-pic" src="{{pictureURI}}" title="description">
         <Div class="user-info">
-            <img id = "profile-pic" src="{{pictureURI}}" title="description">
-          <p>{{first_name}} {{last_name}}</p>
+            <p>{{first_name}} {{last_name}}</p>
+            <p>{{city}}, {{state}}</p>
         </Div>
-      </script>
+    </script>
+    <script id="friends-container-template" type="text/x-handlebars-template">
+        <ul class="user_list">
+            {{#each friends}}
+            <li>{{first_name}} {{last_name}}</li>
+            {{/each}}
+          </ul>
+    </script>
+    <script id="quote-container-template" type="text/x-handlebars-template">
+            <p>Favorite quote:</p>
+            <p>{{quote}}</p>
+    </script>
+    <script id="meat-container-template" type="text/x-handlebars-template">
+        <p>About me:</p>
+        <p>{{about}}</p>
+    </script>
     <div class="container">	
         <div class="user-container"></div>	
         <div class="quote-container"></div>	
