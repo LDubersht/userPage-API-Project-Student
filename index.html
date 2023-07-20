@@ -14,10 +14,10 @@
 <body>
     <script id="user-container-template" type="text/x-handlebars-template">
         <img id = "profile-pic" src="{{pictureURI}}" title="description">
-        <Div class="user-info">
-            <p>{{first_name}} {{last_name}}</p>
-            <p>{{city}}, {{state}}</p>
-        </Div>
+        <!-- <Div> -->
+            <p class="user-info">{{first_name}} {{last_name}}</p>
+            <p class="user-info">{{city}}, {{state}}</p>
+        <!-- </Div> -->
     </script>
     <script id="friends-container-template" type="text/x-handlebars-template">
         <ul class="user_list">
@@ -31,19 +31,25 @@
             <p>{{quote}}</p>
     </script>
     <script id="meat-container-template" type="text/x-handlebars-template">
-        <p>About me:</p>
-        <p>{{about}}</p>
+        <p class = "meat-text">About me:</p>
+        <p class = "meat-text">{{about}}</p>
     </script>
     <script id="pokemon-container-template" type="text/x-handlebars-template">
         <img id = "pokemon-image" src="{{imgURI}}" title="description">
-        <div class="pokemon-text">Favorite Pokemon: {{name}}</div>
+        <p class="pokemon-text">Favorite Pokemon: {{name}}</p>
+    </script>
+    <script id="stickers-container-template" type="text/x-handlebars-template">
+        <img id = "stickers-image" src="{{giphyURI}}" title="description">
     </script>
 
     <div class="container">	
         <div class="user-container"></div>	
         <div class="quote-container"></div>	
         <div class="content-container">	
-            <div class="pokemon-container"></div>	
+            <div class="pokemon-container">
+
+            </div>	
+            <div class="stickers-container"></div>
             <div class="meat-container"></div>	
         </div>	
         <div class="friends">	

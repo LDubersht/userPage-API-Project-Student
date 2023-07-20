@@ -104,9 +104,18 @@ button {
 #pokemon-image {
     width: 150px;
     height: 150px;
-    display: inline-block;
+    display: flex;
     background-size: 100%;
     justify-self: center;
+}
+
+#stickers-image {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    background-size: 100%;
+    justify-self: center;
+    border-color: red;
 }
 
 #pokemon-text {
@@ -117,7 +126,7 @@ button {
     font-size: 20px;
     padding: 1vw;
     display: grid;
-    grid-template-columns: minmax(150px, 150px) minmax(200px, 400px);
+    grid-template-columns: minmax(150px, 150px) minmax(150px, 150px) minmax(200px, 400px);
     align-items: center;
     justify-self: baseline;
     border-bottom: 1px solid #2c3e50;

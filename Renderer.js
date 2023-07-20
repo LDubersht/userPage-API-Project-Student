@@ -32,6 +32,11 @@ class Renderer {
         newHTML = template(data.pokemon);
         $(".pokemon-container").append(newHTML);
 
+        $(".stickers-container").empty()
+        source = $('#stickers-container-template').html();
+        template = Handlebars.compile(source);
+        newHTML = template(data.giphyURI);
+        $(".pokemon-container").append(newHTML);
     }
 
 }
