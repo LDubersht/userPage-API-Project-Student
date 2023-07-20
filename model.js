@@ -59,6 +59,15 @@ class PageDataFS {
          this._pokemon = {"name": this._data.pokemon.name, "imgURI": this._data.pokemon.sprites.other.home.front_default}
     }
 
+    set data(data){
+        this._data = data;
+        this.CreateObjects()
+    }
+
+    get data(){
+        return {...this._data};
+    }
+
     get mainUser(){
         return {...this._mainUser};
     }
