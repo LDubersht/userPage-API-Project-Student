@@ -4,11 +4,12 @@ const fbdata = new PageDataFS()
 
 const render = new Renderer()
 
-fbdata.loadData().then(response =>{
+const reloadUser = function() {fbdata.loadData().then(response =>{
     render.RenderPage(fbdata)
-
 })
-// fbdata.CreateObjects()
+}
 
+reloadUser()
 
+$("#generate-user").on("click", function(){reloadUser()})
 

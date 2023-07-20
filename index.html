@@ -34,6 +34,11 @@
         <p>About me:</p>
         <p>{{about}}</p>
     </script>
+    <script id="pokemon-container-template" type="text/x-handlebars-template">
+        <img id = "pokemon-image" src="{{imgURI}}" title="description">
+        <div class="pokemon-text">Favorite Pokemon: {{name}}</div>
+    </script>
+
     <div class="container">	
         <div class="user-container"></div>	
         <div class="quote-container"></div>	
@@ -46,7 +51,7 @@
             <div class="friends-container">	
             </div>	
         </div>	
-        <div class="buttons">	
+        <div class="buttons" id="generate-user">	
             <button>Generate User</button>	
           </div>	
     </div>

@@ -5,48 +5,45 @@ class APIManager {
         this._URIs = URI
     }
 
-    GetData(URI) {
-        return $.get(URI)
-    }
+    // GetData(URI) {
+    //     return $.get(URI)
+    // }
 
-    GetDataPromise = function(URI) {
-        return new Promise((resolve, reject) =>
-            $.get(URI)
-            .then(response => {
-                if (response.ok) {
-                    return response
-                }
-                throw new Error('somethings wrong')
-            })
-            .then(data => resolve(data))
-            )
-            .catch(error => reject(error));
-    }
+    // GetDataPromise = function(URI) {
+    //     return new Promise((resolve, reject) =>
+    //         $.get(URI)
+    //         .then(response => {
+    //             if (response.ok) {
+    //                 return response
+    //             }
+    //             throw new Error('somethings wrong')
+    //         })
+    //         .then(data => resolve(data))
+    //         )
+    //         .catch(error => reject(error));
+    // }
 
     
 
-    async loadData(URI) {
-        let result = await axios.get(URI)
-    }
+    // async loadData(URI) {
+    //     let result = await axios.get(URI)
+    // }
 
     async loadAllData() {
-            // read our JSON
             let promises = []
             this._URIs.forEach((uri) => {
                 promises.push(axios.get(uri))
             })
-            // let res = await axios.get(URI);
-            // console.log(await Promise.all(promises))
             return await Promise.all(promises)
 
 
     }
 
 
-    get results(){
-        return this._results;
-        console.log("this._results")
-    }
+    // get results(){
+    //     return this._results;
+    //     console.log("this._results")
+    // }
 
 }
 

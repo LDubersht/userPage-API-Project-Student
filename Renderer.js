@@ -25,6 +25,13 @@ class Renderer {
         template = Handlebars.compile(source);
         newHTML = template(data.about);
         $(".meat-container").append(newHTML);
+
+        $(".pokemon-container").empty()
+        source = $('#pokemon-container-template').html();
+        template = Handlebars.compile(source);
+        newHTML = template(data.pokemon);
+        $(".pokemon-container").append(newHTML);
+
     }
 
 }
